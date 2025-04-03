@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>موقفك الجامعي - SmartParkU | موقفك الجامعي - SmartParkU | تسجيل الطالب - وقفني</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma; background: #f7f9fc; text-align: center; padding: 30px; direction: rtl; }
+        .box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 0 10px #ccc; max-width: 400px; margin: auto; }
+        input, button {
+            width: 90%; padding: 10px; margin: 10px 0; font-size: 14px; border-radius: 6px; border: 1px solid #ccc;
+        }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        h2 { font-size: 18px; margin-bottom: 10px; }
+    </style>
+    <script>
+        function saveStudent() {
+            const name = document.getElementById('name').value;
+            const id = document.getElementById('id').value;
+            const uni = document.getElementById('universityId').value;
+            if (name && id && uni) {
+                localStorage.setItem('studentName', name);
+                localStorage.setItem('studentId', id);
+                localStorage.setItem('universityId', uni);
+                localStorage.setItem('collegeName', 'الكلية السليل');
+                window.location.href = 'booking.html';
+            } else {
+                alert('يرجى تعبئة جميع الحقول');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h2>تسجيل بيانات الطالب<br><small style='font-size:13px;color:#555;'>موقفك الجامعي - SmartParkU</small><br>تسجيل بيانات الطالب</h2>
+        <input type="text" id="name" placeholder="اسم الطالب">
+        <input type="text" id="id" placeholder="رقم الهوية">
+        <input type="text" id="universityId" placeholder="الرقم الجامعي">
+        <input type="text" value="الكلية السليل" readonly>
+        <button onclick="saveStudent()">التالي</button>
+    </div>
+</body>
+</html>

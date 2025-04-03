@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>موقفك الجامعي - SmartParkU | موقفك الجامعي - SmartParkU | بيانات الحجز</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            direction: rtl;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f7f9fc;
+            text-align: center;
+            padding: 50px;
+        }
+        .box {
+            background: #ffffff;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById('name').textContent = localStorage.getItem('studentName');
+            document.getElementById('id').textContent = localStorage.getItem('studentId');
+            document.getElementById('universityId').textContent = localStorage.getItem('universityId');
+            document.getElementById('college').textContent = localStorage.getItem('collegeName');
+            document.getElementById('slot').textContent = localStorage.getItem('slotNumber');
+            document.getElementById('time').textContent = localStorage.getItem('bookingTime');
+        };
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h2>تفاصيل الحجز<br><small style='font-size:13px;color:#555;'>موقفك الجامعي - SmartParkU</small><br>تفاصيل حجز الطالب</h2>
+        <p><strong>اسم الطالب:</strong> <span id="name"></span></p>
+        <p><strong>رقم الهوية:</strong> <span id="id"></span></p>
+        <p><strong>الرقم الجامعي:</strong> <span id="universityId"></span></p>
+        <p><strong>الكلية:</strong> <span id="college"></span></p>
+        <p><strong>رقم الموقف:</strong> <span id="slot"></span></p>
+        <p><strong>وقت الحجز:</strong> <span id="time"></span></p>
+    </div>
+</body>
+</html>
